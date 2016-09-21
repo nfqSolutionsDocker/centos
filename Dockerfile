@@ -8,8 +8,8 @@ RUN yum -y install sudo
 # Creacion del usuario solutions en el grupo nfq
 RUN groupadd nfq
 RUN useradd -g nfq solutions
-RUN echo "root:Abc123$" | chpasswd
-RUN echo "solutions:Abc123$" | chpasswd
+RUN echo "root:root" | chpasswd
+RUN echo "solutions:solutions" | chpasswd
 RUN echo "solutions ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers
 RUN echo "%nfq ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers
 RUN sed -i "s/Defaults    requiretty/#Defaults    requiretty/g" /etc/sudoers
