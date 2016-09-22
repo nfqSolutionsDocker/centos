@@ -3,7 +3,7 @@ FROM centos:7
 MAINTAINER solutions@nfq.com
 
 # Intalacion paquetes
-RUN yum -y install sudo
+RUN yum -y install sudo supervisor
 
 # Creacion del usuario solutions en el grupo nfq
 RUN groupadd nfq
