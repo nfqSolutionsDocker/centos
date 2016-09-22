@@ -25,7 +25,6 @@ COPY install_packages.sh /home/solutions/
 RUN sudo chown solutions:nfq /home/solutions/install_packages.sh
 RUN sudo chmod 777 /home/solutions/install_packages.sh
 RUN sudo chmod -R 777 /var/log/supervisor
-#RUN sudo chmod -R 777 /etc/supervisor
 RUN sudo chmod a+x /home/solutions/install_packages.sh
 RUN sudo sed -i -e 's/\r$//' /home/solutions/install_packages.sh
 
