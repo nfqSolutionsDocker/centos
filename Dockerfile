@@ -2,6 +2,9 @@ FROM centos:7
 
 MAINTAINER solutions@nfq.com
 
+# Variables de entorno comunes
+ENV TERM xterm
+
 # Intalacion paquetes
 RUN yum -y install sudo epel-release
 RUN yum -y install supervisor
