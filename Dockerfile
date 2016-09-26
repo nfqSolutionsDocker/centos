@@ -2,7 +2,7 @@ FROM centos:7
 
 MAINTAINER solutions@nfq.com
 
-# Variables de entorno comunes
+# Variables de entorno basicas
 ENV TERM xterm
 
 # Intalacion paquetes
