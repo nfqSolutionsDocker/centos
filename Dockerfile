@@ -26,7 +26,8 @@ USER solutions
 
 # Intalacion de otros paquetes
 COPY install_packages.sh /home/solutions/
-RUN chmod 777 /home/solutions/install_packages.sh && \
+RUN chown solutions:nfq /home/solutions/install_packages.sh && \
+	chmod 777 /home/solutions/install_packages.sh && \
 	chmod a+x /home/solutions/install_packages.sh && \
 	sed -i -e 's/\r$//' /home/solutions/install_packages.sh
 
