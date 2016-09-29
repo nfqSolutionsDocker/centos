@@ -14,7 +14,7 @@ COPY banner.sh /tmp
 RUN echo "root:root" | chpasswd && \
 	sed -i "s/Defaults    requiretty/#Defaults    requiretty/g" /etc/sudoers && \
 	ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime && \
-	cat /tmp/banner.sh >> /etc/bashrc && \
+	echo /tmp/banner.sh >> /etc/bashrc && \
 	chmod 777 /tmp/banner.sh && \
 	chmod a+x /tmp/banner.sh && \
 	sed -i -e 's/\r$//' /tmp/banner.sh
