@@ -12,5 +12,5 @@ For example, docker-compose.yml:
 
 For run:
 ````
-	docker run -it nfqsolutions/centos /bin/bash 
+docker run -it nfqsolutions/centos /bin/bash 
 ```

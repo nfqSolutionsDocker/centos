@@ -14,7 +14,7 @@ COPY banner.txt /tmp
 RUN echo "root:root" | chpasswd && \
 	sed -i "s/Defaults    requiretty/#Defaults    requiretty/g" /etc/sudoers && \
 	ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime && \
-	cat /tmp/banner.txt >> /etc/profile 
+	cat /tmp/banner.txt >> /etc/bashrc 
 
 # Configuracion supervisor
 COPY supervisord.conf /etc/supervisord.conf
