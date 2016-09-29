@@ -9,3 +9,8 @@ For example, docker-compose.yml:
  environment:
   - PACKAGES=git,zip
 ```
+
+For run:
+````
+	docker run -it nfqsolutions/centos /bin/bash 
+```
