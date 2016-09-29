@@ -24,9 +24,9 @@ COPY supervisord.conf /etc/supervisord.conf
 RUN chmod -R 777 /var/log/supervisor
 
 # Intalacion de otros paquetes
-COPY install_packages.sh /home/solutions/
-RUN chmod 777 /home/solutions/install_packages.sh && \
-	chmod a+x /home/solutions/install_packages.sh && \
-	sed -i -e 's/\r$//' /home/solutions/install_packages.sh
+COPY install_packages.sh /solutions/
+RUN chmod 777 /solutions/install_packages.sh && \
+	chmod a+x /solutions/install_packages.sh && \
+	sed -i -e 's/\r$//' /solutions/install_packages.sh
 
 CMD ["/usr/bin/supervisord"]
