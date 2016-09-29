@@ -10,11 +10,14 @@ RUN yum -y install sudo epel-release && \
 	yum -y install supervisor
 
 # Modificaciones usuario root
-COPY banner.txt /tmp
+COPY banner.sh /tmp
 RUN echo "root:root" | chpasswd && \
 	sed -i "s/Defaults    requiretty/#Defaults    requiretty/g" /etc/sudoers && \
 	ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime && \
-	cat /tmp/banner.txt >> /etc/bashrc 
+	cat /tmp/banner.sh >> /etc/bashrc && \
+	chmod 777 /tmp/banner.sh && \
+	chmod a+x /tmp/banner.sh && \
+	sed -i -e 's/\r$//' /tmp/banner.sh
 
 # Configuracion supervisor
 COPY supervisord.conf /etc/supervisord.conf
